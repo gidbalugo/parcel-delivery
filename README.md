@@ -4,6 +4,33 @@ Parcel Delivery project
 # Overview
 
 The project does not use any kind of database as it only needs to calculate delivery cost based on parcel's specifications.
+This same project will host both the API to calculate the delivery cost, and the API to fetch voucher due to issue encountered.
+
+# API Endpoints
+
+### Endpont: `api/delivery/calculate`
+* This is the endpoint to calculate delivery cost based on parcel dimensions
+* Sample request below:
+```json
+{
+   "weight": 51,
+   "height": 1,
+   "width": 1,
+   "length": 1,
+   "voucher": "MYNT"
+}
+```
+
+* Sample Output:
+```json
+{
+    "deliveryCost": 900.0,
+    "voucherApplied": true
+}
+```
+
+### API Endpoint: `/voucher`
+* This is a mock endpoint as a workaround to simulate successful application of voucher due to issue encountered using the provided mock voucher endpoint: https://mynt-exam.mocklab.io/voucher/.
 
 # Dependencies
 
