@@ -1,2 +1,15 @@
-package com.example.delivery.advice;public class ErrorResponse {
+package com.example.delivery.advice;
+
+import lombok.Data;
+
+@Data
+public class ErrorResponse {
+
+    private String message;
+    private int status;
+
+    public ErrorResponse(String message, int status) {
+        this.message = message;
+        this.status = status;
+    }
 }
