@@ -3,7 +3,7 @@ package com.example.delivery.model;
 import lombok.Getter;
 
 @Getter
-public class DeliveryParcel {
+public class Parcel {
 
     private final Double weight;
     private final Double height;
@@ -11,7 +11,7 @@ public class DeliveryParcel {
     private final Double length;
     private final Double volume;
 
-    public DeliveryParcel(Double weight, Double height, Double width, Double length) {
+    public Parcel(Double weight, Double height, Double width, Double length) {
         this.weight = weight;
         this.height = height;
         this.width = width;
