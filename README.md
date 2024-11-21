@@ -28,6 +28,13 @@ This same project will host both the API to calculate the delivery cost, and the
     "voucherApplied": true
 }
 ```
+#### Tests
+
+* When voucher is not applied or not included in the request
+<img width="1089" alt="Screenshot 2024-11-22 at 12 38 36 AM" src="https://github.com/user-attachments/assets/6be9c2d6-c5fb-4e02-bf3c-6eb2cdf3ec36">
+
+* When voucher is applied or included in the request
+<img width="1078" alt="Screenshot 2024-11-22 at 12 38 55 AM" src="https://github.com/user-attachments/assets/77dae4b6-3fd1-4c19-93e2-2bac4579d454">
 
 ### API Endpoint: `/voucher`
 * This is a mock endpoint as a workaround to simulate successful application of voucher due to issue encountered using the provided mock voucher endpoint: https://mynt-exam.mocklab.io/voucher/.
