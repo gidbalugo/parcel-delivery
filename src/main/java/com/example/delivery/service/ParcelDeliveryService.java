@@ -34,6 +34,10 @@ public class ParcelDeliveryService {
         return applyDiscount(deliveryCost, dto.getVoucher());
     }
 
+     /** Created a dedicated service per parcel size to address the flexibility requirement
+       Dedicated service for each type allows changes to calculation of costs in the future
+       without affecting calculation of cost for other parcel type
+      */
     private Double determineCostByType(Parcel parcel) throws ParcelExceedsWeightLimitException {
         if (parcel.getWeight() > parcelConfig.getMaxWeightLimit()) throw new ParcelExceedsWeightLimitException("Parcel is over max weight limit.");
         if (parcel.getWeight() > parcelConfig.getWeightLimitForHeavyParcel()) return heavyParcelService.calculateCost(parcel);
@@ -48,7 +52,7 @@ public class ParcelDeliveryService {
     private Double applyDiscount(Double originalCost, String voucherCode) {
         Voucher voucher = voucherService.fetchVoucher(voucherCode);
 
-        if (voucher.getDiscount() >= originalCost) return Double.valueOf(0);
+        if (voucher.getDiscount() >= originalCost) return (double) 0;
 
         return originalCost - voucher.getDiscount();
     }
