@@ -16,7 +16,7 @@ public class VoucherService {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        String fullEndpoint = voucherConfig.getHost()+voucherConfig.getEndpoint()+code+"?key="+voucherConfig.getApiKey();
+        String fullEndpoint = voucherConfig.getHost()+voucherConfig.getEndpoint()+"/"+code+"?key="+voucherConfig.getApiKey();
         Voucher voucher = restTemplate.getForObject(fullEndpoint, Voucher.class);
 
         return voucher;
