@@ -19,12 +19,9 @@ public class ParcelDeliveryController {
     private final ParcelDeliveryService parcelDeliveryService;
 
     @PostMapping("/calculate")
-    public ResponseEntity<Double > calculate(@Valid  @RequestBody ParcelSpecificationDto parcelSpecificationDto) throws ParcelExceedsWeightLimitException {
+    public ResponseEntity<Double > calculate(@Valid @RequestBody ParcelSpecificationDto parcelSpecificationDto) throws ParcelExceedsWeightLimitException {
         Double deliveryCost = parcelDeliveryService.calculateDeliveryCost(parcelSpecificationDto);
 
-        System.out.println("THIS IS THE COST");
-        System.out.println(deliveryCost);
-        System.out.println("THIS IS THE COST");
         return ResponseEntity.ok(deliveryCost);
     }
 
