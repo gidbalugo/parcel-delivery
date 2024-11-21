@@ -3,15 +3,15 @@ package com.example.delivery.model;
 import lombok.Getter;
 
 @Getter
-public abstract class Parcel {
+public class DeliveryParcel {
 
-    private Double weight;
-    private Double height;
-    private Double width;
-    private Double length;
-    private Double volume;
+    private final Double weight;
+    private final Double height;
+    private final Double width;
+    private final Double length;
+    private final Double volume;
 
-    Parcel(Double weight, Double height, Double width, Double length) {
+    public DeliveryParcel(Double weight, Double height, Double width, Double length) {
         this.weight = weight;
         this.height = height;
         this.width = width;
@@ -19,5 +19,4 @@ public abstract class Parcel {
         this.volume = height * width * length;
     }
 
-    public abstract Double calculateCost();
 }
